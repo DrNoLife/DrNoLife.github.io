@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ggᵉᶻ</title>
+        <meta charset="utf-8" />
+        <style>
+            body {
+                background-image: url(ggez_108.png);
+            }
+            div.a {
+                width: 250px;
+                height:150px;
+                position:fixed;
+                font-size: 80px;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                color: #fff;
+            }
+        </style>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+        <script src="color_switch.js"></script>
+        <script>
+            $(document).ready(function(){
+                animateDiv();
+            });
+
+            function makeNewPosition(){
+                // Get viewport dimensions (remove the dimension of the div)
+                var h = $(window).height() - 150;
+                var w = $(window).width() - 250;
+                var nh = Math.floor(Math.random() * h);
+                var nw = Math.floor(Math.random() * w);
+
+                return [nh,nw];
+            }
+
+            function animateDiv(){
+                var newq = makeNewPosition();
+                var oldq = $('.a').offset();
+                var speed = calcSpeed([oldq.top, oldq.left], newq);
+
+                $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
+                  animateDiv();
+                });
+            };
+
+            function calcSpeed(prev, next) {
+
+                var x = Math.abs(prev[1] - next[1]);
+                var y = Math.abs(prev[0] - next[0]);
+                var greatest = x > y ? x : y;
+                var speedModifier = 0.2;
+                var speed = Math.ceil(greatest/speedModifier);
+
+                return speed;
+            }
+        </script>
+    </head>
+    <body>
+        <div class='a'>
+            <h1 class="color_switch">ggᵉᶻ</h1>
+        </div>
+        <audio controls autoplay>
+            <source src="fresh.mp3" type="audio/mpeg">
+        </audio>
+    </body>
+</html>
