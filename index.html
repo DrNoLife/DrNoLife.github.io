@@ -1,149 +1,55 @@
-<!--
-    Whew, did you really get so salty at us?
-    I mean, to come across this webpage you've probably played against us. Got tilted because as usual, we spammed our "ggez" which ended up triggering you! So you did the only logical thing:
-    You looked at our Steam Profile, you took a look at our Steam Groups. You found THE Steam group, and you checked that one.
-    In the group you ended up finding a link to this website, which ended up tilting you even further, to the point you opened up the developer tools, and fucking looked at the code.. Why would you do that? Probably to be able to say "HAHAHA DUDE UR CODE IS SHIT, SO BAD", but my mang... Don't you know.. T'is is all a joek XddddD
-
-    Yours sincerely - DrNoLife & Lissner.
--->
 <!DOCTYPE html>
 <html>
     <head>
-        <title>ggᵉᶻ</title>
+        <title>HELLO GODE LÆRER!</title>
         <meta charset="utf-8" />
-        <link rel="icon" type="image/png" href="54.png" />
-        <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
         <style>
-            @font-face {
-                font-family: 'comic sans';
-                src: url('comicbd.eot'); /* IE9 Compat Modes */
-                src: url('comicbd.woff2') format('woff2'), /* Super Modern Browsers */
-                     url('comicbd.woff') format('woff'), /* Pretty Modern Browsers */
-                     url('comicbd.ttf')  format('truetype') /* Safari, Android, iOS */
-            }
-
-            .mq1, .mq2, .mq3 {
-                font-family: 'comic sans', Fallback, sans-serif;
-                color: #ff005e;
-            }
-
-            .mq1 {
-                font-size: 3.2rem;
-                position: absolute;
-                bottom: 100px;
-            }
-            .mq2 {
-                font-size: 3.9rem;
-                position: absolute;
-                top: 300px;
-                left: 700px;
-
-            }
-            .mq3 {
-                font-size: 6.3rem;
-            }
-
             body {
-                font-family: 'comic sans', Fallback, sans-serif;
-                background-image: url(54_5.jpg);
                 padding: 0;
                 margin: 0;
-                font-size: 10px;
-                overflow: hidden;
-            }
-
-            section.landing {
-                width: 100vw;
+                display:flex;
+                flex-direction: column;
                 height: 100vh;
-                background-color: #232323;
+                font-family: verdana;
+                font-size: 10px;
+                color: #fff;
+            }
+            .fullpage {
+                width: 100%;
+                min-height: 100vh;
+                background-color: #2e2e2e;
                 display: flex;
                 justify-content: center;
                 align-items: center;
-                position: absolute;
-                z-index: 100;
+                text-align: center;
             }
-
-            section.landing a {
-                color: #fff;
-                text-decoration: none;
-                padding: 15px;
-                border: 1px solid #fff;
-                font-family: 'Nunito', sans-serif;
-                font-size: 1.5rem;
-                background-color: rgba(255, 255, 255, 0);
-                transition: 0.2s ease-in-out;
-                cursor: pointer;
+            .one, .two, .three {
+                font-size: 5rem;
             }
-            section.landing a:hover {
-                background-color: rgba(255, 255, 255, 0.2);
+            .two {
+                background-color: #f2f2f2;
+                color: #000;
+                font-size: 2rem;
             }
-
-
-            div.a {
-                width: 250px;
-                height:150px;
-                position:fixed;
-                font-size: 80px;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-                color: #fff;
-                font-family: 'comic sans', Fallback, sans-serif;
+            .three {
+                background-color: #fff;
+                color: #757575;
+                font-size: 1.2rem;
+                align-items: flex-end;
+                justify-content: flex-start;
+                padding: 50px;
             }
         </style>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-        <script src="color_switch.js"></script>
-        <script src="meme_acti.js"></script>
-        <script>
-            $(document).ready(function(){
-                animateDiv();
-            });
-
-            function makeNewPosition(){
-                // Get viewport dimensions (remove the dimension of the div)
-                var h = $(window).height() - 150;
-                var w = $(window).width() - 250;
-                var nh = Math.floor(Math.random() * h);
-                var nw = Math.floor(Math.random() * w);
-
-                return [nh,nw];
-            }
-
-            function animateDiv(){
-                var newq = makeNewPosition();
-                var oldq = $('.a').offset();
-                var speed = calcSpeed([oldq.top, oldq.left], newq);
-
-                $('.a').animate({ top: newq[0], left: newq[1] }, speed, function(){
-                  animateDiv();
-                });
-            };
-
-            function calcSpeed(prev, next) {
-
-                var x = Math.abs(prev[1] - next[1]);
-                var y = Math.abs(prev[0] - next[0]);
-                var greatest = x > y ? x : y;
-                var speedModifier = 0.2;
-                var speed = Math.ceil(greatest/speedModifier);
-
-                return speed;
-            }
-        </script>
     </head>
     <body>
-        <section class="landing">
-            <a class="play_sound">Proceed.</a>
+        <section class="fullpage one">
+            <h1>HEJSA LISBET</h1>
         </section>
-        <marquee class="mq1">This text will scroll from right to left</marquee>
-        <div class='a'>
-            <h1 class="color_switch">ggᵉᶻ</h1>
-        </div>
-        <marquee class="mq2" direction="up">This text will scroll from bottom to top</marquee>
-        <marquee class="mq3" direction="down" width="1900" height="1000" behavior="alternate">
-            <marquee behavior="alternate">
-                This text will bounce
-            </marquee>
-        </marquee>
+        <section class="fullpage two">
+            <h2>Du er en rigtig god lærer!<br />Og dette er en meget god time!</h2>
+        </section>
+        <section class="three">
+            <h3>Mvh. Din vidunderlige klasse.</h3>
+        </section>
     </body>
 </html>
