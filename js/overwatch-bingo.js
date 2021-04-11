@@ -58,6 +58,8 @@ $(document).ready(function() {
     // When called, will fill in all squares with a random element from bingoGuesses array.
     function FillInBingoStuff() {
 
+        //console.log("fillingstuff bingoguesses: \n" + bingoGuesses);
+
         var temp1 = [];
 
         for(var i = 0; i < bingoGuesses.length; i++) {
@@ -105,20 +107,43 @@ $(document).ready(function() {
     }
 
     // Huh, I wanted this to be a function, which would be called when a keypress happened via html.. But seems like it just aint going to happen lol
-    $("#bingo-text-input").keypress(function() {
+    $("#bingo-text-input").on('change keyup paste', function() {
+
         var textarea = $("#bingo-text-input");
-
         var splitText = textarea.val().split(",");
+        var tempArr = [];
 
-        for(var i = 0; i < splitText.length - 1; i++) {
-            if(splitText[i] != "") { // For some reason, it was adding an empty string into the array... well, this stops that behaviour
-                splitText[i] = $.trim(splitText[i]);
+        //console.log(splitText);
+
+        for(var i = 0; i < splitText.length; i++) {
+
+            //console.log("Current splittext: " + splitText[i]);
+
+            //console.log(splitText[i]);
+
+            // Trim the string
+            splitText[i] = $.trim(splitText[i]);
+
+            //console.log(splitText[i]);
+
+            // Remove all ,
+            splitText[i] = splitText[i].replace(new RegExp(',', 'g'),"");
+
+            //console.log(splitText[i]);
+
+            if(splitText[i] == "" || splitText[i] == " ") {
+                //console.log("inside return true stuff");
+                continue;
+                //console.log("wrong side of return true stuff");
             }
+
+            
+            tempArr.push(splitText[i]);
         }
 
-        bingoGuesses = splitText;
-
-        console.log(splitText);
+        //console.log("keypress bingoguesses: " + bingoGuesses);
+        //console.log("keypress temparr: " + tempArr);
+        bingoGuesses = tempArr;
     });
 
     // Initialize gameplate
@@ -132,8 +157,14 @@ $(document).ready(function() {
 
     // Clicking the "New Plate" button
     $("#bingo-reroll").click(function() {
-        FillInBingoStuff();
-        $(".bingo-spot").removeClass("checked-off");
+
+        if(bingoGuesses.length < 24) {
+            alert("You need to have 24 entries added to the card. Either refresh the page, or fill in some in the textbox.\n You currently have " + bingoGuesses.length + " entries.");
+        } else {
+            FillInBingoStuff();
+            $(".bingo-spot").removeClass("checked-off");
+        }
+        
     });
 
     // Upon click of bingo stuff, add a class to the div clicked.. if div already has class, remove said class
