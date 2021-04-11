@@ -1,0 +1,163 @@
+@import url("https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kiwi+Maru:wght@300;400;500&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap");
+/*
+font-family: 'Dela Gothic One', cursive; // For the title
+font-family: 'Kiwi Maru', serif; // For the bingo plate
+font-family: 'Source Sans Pro', sans-serif; // For the text
+*/
+.bold {
+  font-weight: bold;
+}
+
+body {
+  background-color: #242F31;
+  color: #eeeeee;
+  height: 100vh;
+  font-size: 10px;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Source Sans Pro', sans-serif;
+}
+
+body main {
+  display: flex;
+  flex: 1 0 auto;
+  justify-content: center;
+}
+
+body footer {
+  flex-shrink: 0;
+}
+
+header {
+  padding: 40px;
+  font-size: 1.2rem;
+  box-sizing: border-box;
+}
+
+header .title {
+  font-weight: bold;
+  font-size: 2.6rem;
+  font-family: 'Dela Gothic One', cursive;
+  color: #f1c40f;
+  letter-spacing: 1px;
+  margin-bottom: 5px;
+}
+
+header > p:not(.title) {
+  font-style: italic;
+}
+
+footer {
+  box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  padding: 40px;
+  font-size: 1.2rem;
+}
+
+footer a {
+  text-decoration: none;
+  color: #f39c12;
+  font-weight: 600;
+}
+
+footer .creator-links ul {
+  margin-top: 10px;
+  font-size: 1rem;
+  text-align: right;
+}
+
+footer .creator-links ul li {
+  margin-top: 5px;
+}
+
+footer .footer-link-text {
+  color: gray;
+  font-size: 0.7rem;
+  font-style: italic;
+  text-align: right;
+  margin-top: 10px;
+}
+
+.content-wrapper {
+  max-width: 1080px;
+}
+
+.content-wrapper .bingo-control {
+  display: flex;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.content-wrapper .bingo-control p {
+  margin-top: 25px;
+  font-size: 1.4rem;
+  border: 1px solid #ccc;
+  padding: 15px 20px;
+  text-align: center;
+  display: block;
+  width: fit-content;
+  user-select: none;
+}
+
+.content-wrapper .bingo-text-input-container {
+  margin-top: 50px;
+}
+
+.content-wrapper .bingo-text-input-container textarea {
+  margin-top: 5px;
+  width: 100%;
+  resize: none;
+  height: 60px;
+  border: 1px solid #ccc;
+  outline: 0;
+  background-color: #353c3e;
+  color: #fff;
+}
+
+.bingo-game {
+  width: 800px;
+  min-height: 50px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  box-sizing: border-box;
+  box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+}
+
+.bingo-game .bingo-spot {
+  width: calc(800px / 5);
+  height: calc(800px / 5);
+  /* Honestly, this part just seems unnecessary, but I dont really care right now..*/
+  border-collapse: collapse;
+  border: 1px solid #4a4a4a;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  user-select: none;
+  cursor: pointer;
+}
+
+.bingo-game .bingo-spot p {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-align: center;
+}
+
+.bingo-game .checked-off, .bingo-game .free-spot {
+  color: green;
+}
+
+.bingo-game .checked-off {
+  background-image: url("../img/checked-off.png");
+  background-size: cover;
+}
+
+.bingo-game .free-spot {
+  background-image: url("../img/free-spot.png");
+  background-repeat: no-repeat;
+  background-size: 140px 140px;
+  background-position: 10px;
+}
+/*# sourceMappingURL=main.css.map */

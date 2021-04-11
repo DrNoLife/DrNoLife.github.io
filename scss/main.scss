@@ -1,0 +1,178 @@
+// Fonts
+@import url('https://fonts.googleapis.com/css2?family=Dela+Gothic+One&family=Kiwi+Maru:wght@300;400;500&family=Source+Sans+Pro:ital,wght@0,200;0,300;0,400;0,600;0,700;0,900;1,200;1,300;1,400;1,600;1,700;1,900&display=swap');
+/*
+font-family: 'Dela Gothic One', cursive; // For the title
+font-family: 'Kiwi Maru', serif; // For the bingo plate
+font-family: 'Source Sans Pro', sans-serif; // For the text
+*/
+
+// Variables
+//$title-color: #FAF305;
+$title-color: #f1c40f;
+$link-color: #f39c12;
+
+.bold {font-weight: bold;}
+
+// Sticky footer
+body {
+    background-color: #242F31;
+    color: rgb(238, 238, 238);
+    height: 100vh;
+    font-size: 10px;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Source Sans Pro', sans-serif;
+
+    main {
+        display: flex;
+        flex: 1 0 auto;
+        justify-content: center;    
+    }
+
+    footer {
+        flex-shrink: 0;
+    }
+}
+
+// Header styling
+header {
+    padding: 40px;
+    font-size: 1.2rem;
+    box-sizing: border-box;
+
+    .title {
+        font-weight: bold;
+        font-size: 2.6rem;
+        font-family: 'Dela Gothic One', cursive;
+        color: $title-color;
+        letter-spacing: 1px;
+        margin-bottom: 5px;
+    }
+    >p:not(.title) {
+        font-style: italic;
+    }
+}
+
+// Footer styling
+footer {
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    font-size: 1.2rem;
+
+    a {
+        text-decoration: none;
+        color: $link-color;
+        font-weight: 600;
+    }
+
+    .creator-links {
+        ul {
+            margin-top: 10px;
+            font-size: 1rem;
+            text-align: right;
+            li {margin-top: 5px;}
+        }
+    }
+
+    .footer-link-text {
+        color: gray;
+        font-size: 0.7rem;
+        font-style: italic;
+        text-align: right;
+        margin-top: 10px;
+    }
+}
+
+.content-wrapper {
+    max-width: 1080px;
+
+    .bingo-control {
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+
+        p {
+            margin-top: 25px;
+            font-size: 1.4rem;
+            border: 1px solid #ccc;
+            padding: 15px 20px;
+            text-align: center;
+            display: block;
+            width:fit-content;
+            user-select: none;
+        }
+    }
+
+    .bingo-text-input-container {
+        margin-top: 50px;
+
+        textarea {
+            margin-top: 5px;
+            width: 100%;
+            resize: none;
+            height: 60px;
+            border: 1px solid #ccc;
+            outline: 0;
+            background-color: #353c3e;
+            color: #fff;
+        }
+    }
+}
+
+// Bingo styling
+.bingo-game {
+    $bingo-width: 800px;
+
+    width: $bingo-width;
+    min-height: 50px;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 3px rgba(0, 0, 0, 0.35);
+
+    .bingo-spot {
+        // Dynamiccly calc the dimensions based on container width
+        width: calc(#{$bingo-width} / 5);
+        height: calc(#{$bingo-width} / 5);
+        //width: 160px;
+        //height: 160px;
+
+        /* Honestly, this part just seems unnecessary, but I dont really care right now..*/
+
+        border-collapse: collapse;
+        border: 1px solid #4a4a4a;
+        box-sizing: border-box;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        user-select: none;
+        cursor: pointer;
+
+        p {
+            font-size: 1.5rem;
+            font-weight: bold;
+            text-align: center;
+        }
+    }
+
+    .checked-off, .free-spot {
+        color: green;
+    }
+
+    .checked-off {
+        background-image: url("../img/checked-off.png");
+        background-size: cover;
+    }
+
+    .free-spot {
+        background-image: url("../img/free-spot.png");
+        background-repeat: no-repeat;
+        background-size: 140px 140px;
+        background-position: 10px;
+    }
+}
