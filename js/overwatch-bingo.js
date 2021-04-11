@@ -85,7 +85,7 @@ $(document).ready(function() {
                     BingoOutput = temp1[randNum].toUpperCase();
                     temp1.splice(randNum, 1);
 
-                    console.log("Length: " + t1Length + "\nRandom Number: " + randNum + "\nBingoOutput: " + BingoOutput + "\nT1 New Length: " + temp1.length);
+                    //console.log("Length: " + t1Length + "\nRandom Number: " + randNum + "\nBingoOutput: " + BingoOutput + "\nT1 New Length: " + temp1.length);
 
                     // Update html
                     $(".bingo-spot.bingo-row-" + ii + ".bingo-column-" + jj + "").html("<p>" + BingoOutput + "</p>");
@@ -133,6 +133,7 @@ $(document).ready(function() {
     // Clicking the "New Plate" button
     $("#bingo-reroll").click(function() {
         FillInBingoStuff();
+        $(".bingo-spot").removeClass("checked-off");
     });
 
     // Upon click of bingo stuff, add a class to the div clicked.. if div already has class, remove said class
