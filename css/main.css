@@ -151,7 +151,9 @@ footer .footer-link-text {
 
 .bingo-game .checked-off {
   background-image: url("../img/checked-off.png");
-  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: 140px 140px;
+  background-position: 10px;
 }
 
 .bingo-game .free-spot {
